@@ -1,6 +1,6 @@
 /**
  * Client-side wallpaper pipeline for Xteink X4. Exports 24-bit BMP only.
- * Portrait 480×800 or landscape 800×480.
+ * Portrait 528×792 or landscape 792×528.
  */
 (() => {
   /** @type {Record<string, HTMLElement | null>} */
@@ -32,8 +32,8 @@
   };
 
   const outCanvas = document.createElement("canvas");
-  outCanvas.width = 480;
-  outCanvas.height = 800;
+  outCanvas.width = 528;
+  outCanvas.height = 792;
   /** @type {CanvasRenderingContext2D | null} */
   let outCtx = null;
   try {
@@ -96,8 +96,8 @@
 
   function syncCanvasDimensions() {
     const landscape = isLandscape();
-    const w = landscape ? 800 : 480;
-    const h = landscape ? 480 : 800;
+    const w = landscape ? 792 : 528;
+    const h = landscape ? 528 : 792;
     if (outCanvas.width !== w || outCanvas.height !== h) {
       outCanvas.width = w;
       outCanvas.height = h;
